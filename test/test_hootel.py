@@ -7,6 +7,7 @@ import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 
 
+
 class TestHootel(object):
     def setup_method(self):
         URL = 'http://hotel-v3.progmasters.hu/'
@@ -14,6 +15,7 @@ class TestHootel(object):
         options.add_experimental_option("detach", True)
         options.add_argument("--headless")
         self.browser = webdriver.Chrome(options=options)
+        self.browser.maximize_window()
         self.browser.get(URL)
 
     def teardown_method(self):
